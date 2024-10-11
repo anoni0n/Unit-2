@@ -1,3 +1,4 @@
+
 package word_games;
 
 /**
@@ -8,7 +9,7 @@ package word_games;
  */
 public class WordGames
 {
-    private String word;
+    public String word;
 
     public WordGames(String text)
     {
@@ -21,9 +22,11 @@ public class WordGames
      */
     public String scramble()
     {
-        // switch first half
-        // and second half
-        return "";
+       int index = (int)((this.word.length()/2.0+Math.random()));
+       //finds the index of the middle of the word
+        String newStart = this.word.substring(index);
+        String newEnding = this.word.substring(0,index);
+        return newStart+newEnding;
 
     }
 
@@ -35,9 +38,11 @@ public class WordGames
      */
     public String bananaSplit(int insertIdx, String insertText)
     {
+        String wordStart = this.word.substring(0,insertIdx);
+        String wordEnd = this.word.substring(insertIdx);
         // Insert insertText at the position
         // insertIdx
-        return "";
+        return wordStart+insertText+wordEnd;
 
     }
 
@@ -52,7 +57,12 @@ public class WordGames
     {
         // Insert insertText after the first
         // occurence of the insertChar
-        return "";
+        int insertIdx = this.word.indexOf(insertChar);
+        String wordStart = this.word.substring(0,insertIdx);
+        String wordEnd = this.word.substring(insertIdx);
+        // Insert insertText at the position
+        // insertIdx
+        return wordStart+insertText+wordEnd;
 
     }
 
@@ -60,7 +70,7 @@ public class WordGames
     public String toString()
     {
         // Games[word]
-        return "";
+        return "["+this.word+"]";
 
     }
 
