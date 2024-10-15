@@ -25,8 +25,8 @@ public class WordGames
        int index = (int)((this.word.length()/2.0+Math.random()));
        //finds the index of the middle of the word
         String newStart = this.word.substring(index);
-        String newEnding = this.word.substring(0,index);
-        return newStart+newEnding;
+        String newEnd = this.word.substring(0,index);
+        return newStart+newEnd;
 
     }
 
